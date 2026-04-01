@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@theme {
+  --color-on-primary-fixed-variant: #5b4040;
+  --color-on-surface-variant: #4f4444;
+  --color-inverse-on-surface: #f6efef;
+  --color-on-secondary: #ffffff;
+  --color-tertiary-fixed: #e4e4cc;
+  --color-on-background: #1d1b1b;
+  --color-surface-container: #f3ecec;
+  --color-inverse-primary: #e4bdbd;
+  --color-primary-fixed: #ffdada;
+  --color-surface: #fff8f7;
+  --color-surface-container-lowest: #ffffff;
+  --color-tertiary-container: #dcdcc4;
+  --color-on-primary: #ffffff;
+  --color-inverse-surface: #333030;
+  --color-surface-dim: #dfd8d8;
+  --color-on-tertiary: #ffffff;
+  --color-outline-variant: #d3c3c2;
+  --color-surface-tint: #755757;
+  --color-on-secondary-container: #745c00;
+  --color-error-container: #ffdad6;
+  --color-surface-container-high: #ede7e6;
+  --color-on-secondary-fixed-variant: #574500;
+  --color-on-secondary-fixed: #241a00;
+  --color-surface-bright: #fff8f7;
+  --color-secondary-container: #fed65b;
+  --color-secondary: #735c00;
+  --color-on-tertiary-container: #5f614e;
+  --color-secondary-fixed-dim: #e9c349;
+  --color-on-surface: #1d1b1b;
+  --color-background: #fff8f7;
+  --color-on-primary-container: #765858;
+  --color-error: #ba1a1a;
+  --color-on-tertiary-fixed: #1b1d0e;
+  --color-primary: #755757;
+  --color-secondary-fixed: #ffe088;
+  --color-primary-fixed-dim: #e4bdbd;
+  --color-on-tertiary-fixed-variant: #474836;
+  --color-surface-container-low: #f9f2f1;
+  --color-outline: #817474;
+  --color-tertiary-fixed-dim: #c8c8b0;
+  --color-surface-container-highest: #e8e1e0;
+  --color-primary-container: #f9d1d1;
+  --color-on-error-container: #93000a;
+  --color-tertiary: #5e604d;
+  --color-on-error: #ffffff;
+  --color-on-primary-fixed: #2b1516;
+  --color-surface-variant: #e8e1e0;
+
+  --font-headline: "Noto Serif", serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
+  --font-label: "Plus Jakarta Sans", sans-serif;
+
+  --radius-default: 1rem;
+  --radius-lg: 2rem;
+  --radius-xl: 3rem;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-on-surface font-body overflow-x-hidden;
+    min-height: max(884px, 100dvh);
+  }
+}
+
+@layer utilities {
+  .glass-morphism {
+    background: rgba(249, 209, 209, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.5); }
+}
+
+.sparkle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: blink 2s infinite;
+}
+
